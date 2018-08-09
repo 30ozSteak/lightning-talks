@@ -2,13 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 nav ul{
   list-style-type: none;
   text-align: right;
   padding: 1rem 1rem 0 0;
+  z-index: 5;
 }
 
 nav li {
@@ -19,12 +20,8 @@ nav li {
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.507);
   cursor: pointer;
-  font-size: .5rem;
+  font-size: .8rem;
   transition: .5s;
-  align-items: flex-start;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 4rem;
 }
 
 nav li:hover{
@@ -34,8 +31,113 @@ nav li:hover{
 }
 
 main{
-  background: url(https://source.unsplash.com/collection/1911873/1600x900);
+  background: linear-gradient(
+    rgba(93, 93, 93, 0.671),
+    rgba(36, 36, 36, 0.829)),
+    url(https://source.unsplash.com/collection/1911873/1600x900);
   height: 100vh;
-  filter: grayscale(100%);
-
+  /* filter: grayscale(100%); */
 }
+
+main .hero-text{
+  padding-top: 20rem;
+  font-size: 1.3rem;
+}
+
+.hero-text{
+  text-align: center;
+  color: white;
+  font-weight: 100;
+}
+
+.hero-text :first-child{
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text span{
+  animation: 🦄 3s linear infinite;
+  color: rgb(239, 120, 255);
+}
+
+@keyframes 🦄 {
+  0% {
+    filter: hue-rotate(-90deg);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    filter: hue-rotate(-90deg);
+  }
+}
+
+.hero-text :nth-child(3){
+  margin-top: 5rem;
+  font-size: 1rem;
+  border: 1px solid white;
+  display: inline-block;
+  padding: .7rem 2.5rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.507);
+  transition: .5s;
+  text-transform: uppercase;
+}
+
+.hero-text :nth-child(3):hover{
+  background-color: rgba(255, 255, 255, 0.794);
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  
+}
+
+.social-links {
+  color: white;
+  list-style-type: none;
+  text-align: right;
+  margin: 10rem 2rem 0 0;
+  font-size: 1.5rem;
+}
+
+.social-links li{
+  display: inline-block;
+  padding: 1rem;
+  transition:.2s;
+  cursor: pointer;
+}
+
+.social-links li:first-child{
+  background-color: rgb(221, 221, 221);
+  color: black;
+}
+
+.social-links li:nth-child(2){
+  background-color: #25292E;
+  color: white;
+}
+
+.social-links li:nth-child(3){
+  background-color: #57B65F;
+  color: white;
+}
+
+.social-links li:last-child{
+  background-color:#3076B0
+}
+
+.social-links li:hover{
+  padding-bottom: 1.5rem;
+  filter: brightness(130%);
+}
+
+/* end landing page */
+
+/* start portfolio grid */
+
+.portfolio-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
