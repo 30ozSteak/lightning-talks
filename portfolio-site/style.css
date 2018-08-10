@@ -5,6 +5,17 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.fa-caret-right{
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+  transition: .5s
+}
+
+li{
+  list-style-type: none;
+}
+
 nav ul{
   list-style-type: none;
   text-align: right;
@@ -36,7 +47,6 @@ main{
     rgba(36, 36, 36, 0.829)),
     url(https://source.unsplash.com/collection/1911873/1600x900);
   height: 100vh;
-  /* filter: grayscale(100%); */
 }
 
 main .hero-text{
@@ -90,7 +100,7 @@ main .hero-text{
   background-color: rgba(255, 255, 255, 0.794);
   color: rgb(0, 0, 0);
   border: 1px solid black;
-  
+  letter-spacing: .2rem;
 }
 
 .social-links {
@@ -106,30 +116,14 @@ main .hero-text{
   padding: 1rem;
   transition:.2s;
   cursor: pointer;
-}
-
-.social-links li:first-child{
-  background-color: rgb(221, 221, 221);
-  color: black;
-}
-
-.social-links li:nth-child(2){
-  background-color: #25292E;
+  background-color: rgb(39, 39, 39);
   color: white;
-}
-
-.social-links li:nth-child(3){
-  background-color: #57B65F;
-  color: white;
-}
-
-.social-links li:last-child{
-  background-color:#3076B0
+  border: 1px solid transparent;
 }
 
 .social-links li:hover{
-  padding-bottom: 1.5rem;
-  filter: brightness(130%);
+  filter: brightness(140%);
+  border: 1px solid rgba(255, 255, 255, 0.329);
 }
 
 /* end landing page */
@@ -139,5 +133,182 @@ main .hero-text{
 .portfolio-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+    "p-grid1 p-grid2 p-grid3"
+    "p-grid4 p-grid4 p-grid5";
+    grid-template-rows: repeat(2, 27rem);
 }
 
+.p-grid1{
+  grid-area: p-grid1;
+  background: url(img/weatherly.png);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mini-synopsis{
+  background-color: rgba(255, 255, 255, 0.65);
+  height: 9rem;
+  padding: 1.3rem;
+  font-weight: 100;
+  opacity: 0;
+  transition: .7s;
+  font-size: .9rem;
+  color: rgb(70, 70, 70);
+}
+
+.mini-synopsis:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.931);
+}
+
+.mini-synopsis span{
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.mini-synopsis p{
+  letter-spacing: 1.5px;
+}
+
+.p-grid1:hover .mini-synopsis,
+.p-grid2:hover .mini-synopsis,
+.p-grid3:hover .mini-synopsis,
+.p-grid4:hover .mini-synopsis,
+.p-grid5:hover .mini-synopsis{
+  opacity: 100;
+}
+
+.p-grid2{
+  grid-area: p-grid2;
+  background: url(img/weatherly.png);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.p-grid2 .mini-synopsis{
+  grid-column: 3/5
+}
+
+.p-grid3{
+  grid-area: p-grid3;
+  background: url(img/weatherly.png);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.p-grid3 .mini-synopsis,
+.p-grid5 .mini-synopsis{
+  align-self: end;
+}
+
+.p-grid4{
+  grid-area: p-grid4;
+  background: url(img/weatherly.png);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.p-grid4 .mini-synopsis{
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 3/5
+}
+
+.p-grid5{
+  grid-area: p-grid5;
+  background: url(img/weatherly.png);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/* work-grid end */
+
+/* personal grid start */
+
+.personal-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr
+}
+
+.about-me{
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  background: linear-gradient(
+    rgba(93, 93, 93, 0.671),
+    rgba(36, 36, 36, 0.829));
+  height: 51.6rem;
+}
+
+.about-clickables{
+  align-self: center;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.about-clickables li{
+  padding-left: 1rem;
+  line-height: 3rem;
+  color: white;
+  font-weight: 200;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.about-clickables li:hover{
+  font-weight: 500;
+}
+
+.descriptors{
+  align-self: center;
+  color: white;
+  width: 40rem;
+  line-height: 2rem;
+  letter-spacing: .1rem;
+  font-weight: 200;
+  text-transform: lowercase;
+}
+
+.descriptors h5{
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.521);
+  font-weight: 100;
+  padding-bottom: 5rem;
+}
+
+.closing{
+  text-align: right;
+}
+
+.me{
+  font-size: 2em;
+  font-weight: 100;
+  animation: 🦄 3s linear infinite;
+  color: rgb(239, 120, 255);
+}
+
+.right-column{
+  display: grid;
+  grid-template-rows: 25.8rem 25.8rem;
+}
+
+.music{
+  background-color: red;
+}
+
+.languages{
+  background-color: green;
+}
