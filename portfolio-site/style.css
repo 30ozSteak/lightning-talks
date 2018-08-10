@@ -1,3 +1,5 @@
+/* general styles */
+
 *{
   padding: 0;
   margin: 0;
@@ -16,6 +18,44 @@ li{
   list-style-type: none;
 }
 
+@keyframes 🦄 {
+  0% {
+    filter: hue-rotate(-90deg);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    filter: hue-rotate(-90deg);
+  }
+}
+
+/* social links */
+
+.social-links {
+  color: white;
+  list-style-type: none;
+  text-align: right;
+  margin: 10rem 2rem 0 0;
+  font-size: 1.5rem;
+}
+
+.social-links li{
+  display: inline-block;
+  padding: 1rem;
+  transition:.2s;
+  cursor: pointer;
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+.social-links li:hover{
+  background-color: rgba(255, 255, 255, 0.822);
+  color: black;
+}
+
+/* nav */
+
 nav ul{
   list-style-type: none;
   text-align: right;
@@ -26,7 +66,6 @@ nav ul{
 nav li {
   display: inline-block;
   padding: .5rem 1.5rem;
-  border: 1px solid white;
   color: white;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.507);
@@ -38,13 +77,14 @@ nav li {
 nav li:hover{
   background-color: rgba(255, 255, 255, 0.76);
   color: black;
-  border: 1px solid black;
 }
+
+/* main */
 
 main{
   background: linear-gradient(
-    rgba(93, 93, 93, 0.671),
-    rgba(36, 36, 36, 0.829)),
+    rgba(93, 93, 93, 0.774),
+    rgba(36, 36, 36, 0.664)),
     url(https://source.unsplash.com/collection/1911873/1600x900);
   height: 100vh;
 }
@@ -72,22 +112,9 @@ main .hero-text{
   color: rgb(239, 120, 255);
 }
 
-@keyframes 🦄 {
-  0% {
-    filter: hue-rotate(-90deg);
-  }
-  50% {
-    filter: hue-rotate(90deg);
-  }
-  100% {
-    filter: hue-rotate(-90deg);
-  }
-}
-
 .hero-text :nth-child(3){
   margin-top: 5rem;
   font-size: 1rem;
-  border: 1px solid white;
   display: inline-block;
   padding: .7rem 2.5rem;
   cursor: pointer;
@@ -99,36 +126,10 @@ main .hero-text{
 .hero-text :nth-child(3):hover{
   background-color: rgba(255, 255, 255, 0.794);
   color: rgb(0, 0, 0);
-  border: 1px solid black;
   letter-spacing: .2rem;
 }
 
-.social-links {
-  color: white;
-  list-style-type: none;
-  text-align: right;
-  margin: 10rem 2rem 0 0;
-  font-size: 1.5rem;
-}
-
-.social-links li{
-  display: inline-block;
-  padding: 1rem;
-  transition:.2s;
-  cursor: pointer;
-  background-color: rgb(39, 39, 39);
-  color: white;
-  border: 1px solid transparent;
-}
-
-.social-links li:hover{
-  filter: brightness(140%);
-  border: 1px solid rgba(255, 255, 255, 0.329);
-}
-
-/* end landing page */
-
-/* start portfolio grid */
+/* portfolio grid */
 
 .portfolio-grid{
   display: grid;
@@ -184,9 +185,7 @@ main .hero-text{
 
 .p-grid2{
   grid-area: p-grid2;
-  background: url(img/weatherly.png);
-  background-size: cover;
-  background-position: center;
+  background: center / cover url(img/weatherly.png);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -197,53 +196,44 @@ main .hero-text{
 
 .p-grid3{
   grid-area: p-grid3;
-  background: url(img/weatherly.png);
-  background-size: cover;
-  background-position: center;
+  background: center / cover url(img/weatherly.png);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.p-grid3 .mini-synopsis,
+.p-grid2 .mini-synopsis,
 .p-grid5 .mini-synopsis{
   align-self: end;
 }
 
 .p-grid4{
   grid-area: p-grid4;
-  background: url(img/weatherly.png);
-  background-size: cover;
-  background-position: center;
+  background: center / cover url(img/weatherly.png);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .p-grid4 .mini-synopsis{
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-column: 3/5
 }
 
 .p-grid5{
   grid-area: p-grid5;
-  background: url(img/weatherly.png);
-  background-size: cover;
-  background-position: center;
+  background: center / cover url(img/weatherly.png);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
-
-/* work-grid end */
 
 /* personal grid start */
 
 .personal-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr .7fr;
 }
 
 .about-me{
-  grid-column: 1/4;
+  grid-column: 1/3;
   display: grid;
   grid-template-columns: 20rem 1fr;
   background: linear-gradient(
@@ -263,30 +253,30 @@ main .hero-text{
   line-height: 3rem;
   color: white;
   font-weight: 200;
-  cursor: pointer;
   text-transform: uppercase;
   transition: .2s;
 }
 
-.about-clickables li:hover{
-  font-weight: 500;
-}
-
 .descriptors{
-  align-self: center;
+  align-self: end;
   color: white;
   width: 40rem;
   line-height: 2rem;
   letter-spacing: .1rem;
   font-weight: 200;
   text-transform: lowercase;
+  display: block;
 }
 
 .descriptors h5{
   font-size: 2.5rem;
-  text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.521);
+  text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.253);
   font-weight: 100;
   padding-bottom: 5rem;
+}
+
+.descriptors span{
+  text-transform: uppercase;
 }
 
 .closing{
@@ -306,9 +296,108 @@ main .hero-text{
 }
 
 .music{
-  background-color: red;
+  background-color: rgb(233, 233, 233);
 }
 
-.languages{
-  background-color: green;
+.music h5{
+  padding: 3rem .5rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: rgb(49, 49, 49);
+}
+
+.music-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 6rem);
+  grid-template-rows: repeat(2, 6rem);
+  justify-content: space-around;
+  grid-gap: 1rem;
+}
+
+.playlist{
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.74);
+  background-size: cover;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.playlist:hover{
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.74);
+  filter:brightness(120%);
+}
+
+.p1{
+  background: center / cover url(img/spot1.png);
+}
+
+.p2{
+  background: center / cover url(img/spot2.png);
+}
+
+.p3{
+  background: center / cover url(img/spot3.png);
+}
+
+.p4{
+  background: center / cover url(img/spot4.png);
+}
+
+.p5{
+  background: center / cover url(img/spot5.png);
+}
+
+.p6{
+  background: center / cover url(img/spot6.png);
+}
+
+.contact{
+  background-color: rgb(233, 233, 233);
+  position: relative;
+  text-align: center;
+}
+
+.contact:before{
+  position: absolute;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.651);
+  width: 50%;
+  height: .5%;
+  left: 6rem;
+}
+
+.contact i{
+  padding-right: 1rem;
+  color: rgba(0, 0, 0, 0.698);
+}
+
+.contact h5{
+  margin-top: 10rem;
+  font-size: 2rem;
+  font-weight: 200;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.contact h5:hover{
+  text-decoration: underline;
+}
+
+.contact p {
+  text-transform: lowercase;
+}
+
+.contact span{
+  position: relative;
+}
+
+.contact span:hover:after{
+  position: absolute;
+  content: 'Toot Toot!';
+  width: 70%;
+  height: 100%;
+  bottom: 2.5rem;
+  left: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  transform: rotate(-20deg)
 }
