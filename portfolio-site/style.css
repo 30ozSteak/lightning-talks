@@ -53,8 +53,9 @@ li{
   position: fixed;
   cursor: pointer;
   border-radius: 50px;
-  padding: .8rem 1rem 1.2rem 1rem;
+  padding: 1rem 1rem 1.2rem 1rem;
   transition: .2s;
+  background-color: rgba(255, 255, 255, 0.87);
 }
 
 .hotdog:hover{
@@ -64,7 +65,7 @@ li{
 .hotdog div{
   position: relative;
   width: 35px;
-  height: 4.4px;
+  height: 4px;
   background-color: rgb(31, 31, 31);
   margin-top: 5px;
   transition: 0.3s;
@@ -72,7 +73,7 @@ li{
 
 #check:checked + .hotdog .top-bun {
   transform: rotate(-45deg);
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 #check:checked + .hotdog .bottom-bun{
@@ -146,7 +147,7 @@ nav li:hover{
   cursor: pointer;
   background-color: rgb(39, 39, 39);
   color: white;
-  border: .5px solid transparent
+  border: 1px solid transparent
 }
 
 .social-links a{
@@ -154,9 +155,9 @@ nav li:hover{
 }
 
 .social-links li:hover{
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.719);
   color: black;
-  border: .5px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.678);
 }
 
 /* main */
@@ -227,16 +228,89 @@ main .hero-text{
   .p-grid3, .p-grid4,
   .p-grid5{
     cursor: pointer;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.582);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.383);
+    transition: .5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    height: 20rem;
+    position: relative;
+    overflow: hidden;
   }
+
+  .p-grid1:after, .p-grid2:after,
+  .p-grid3:after, .p-grid4:after,
+  .p-grid5:after{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 200;
+    bottom: -5rem;
+    opacity: 0;
+    transition: .4s;
+  }
+
+  .p-grid1:after{
+    content: 'An elegant weather app';
+  }
+
+  .p-grid2:after{
+    content: 'Library of in-browser games from fellow devs'
+  }
+
+  .p-grid3:after{
+    content: 'Conference Talks, Podcasts, and more'
+  }
+
+  .p-grid4:after{
+    content: 'Rewarding you for giving back'
+  }
+
+  .p-grid5:after{
+    content: 'art(?)'
+  }
+
+  .p-grid1:hover:after, .p-grid2:hover:after,
+  .p-grid3:hover:after, .p-grid4:hover:after,
+  .p-grid5:hover:after{
+    opacity: 100;
+    bottom: 3rem;
+  }
+
+  .p-grid1 p, .p-grid2 p,
+  .p-grid3 p, .p-grid4 p,
+  .p-grid5 p{
+  opacity: 0;
+  font-weight: 200;
+  font-size: 1rem;
+}
 
 .p-grid1{
   grid-area: p-grid1;
   background: linear-gradient(
     rgba(75, 75, 75, 0.424),
     rgba(36, 36, 36, 0.692)),center / cover url(https://images.unsplash.com/photo-1518528751534-7bed4f1dfb31?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ebcc7e71d19c1c0185a109464d5c836f&auto=format&fit=crop&w=1949&q=80);
-  filter:grayscale(100);
-  justify-content: middle;
+}
+
+.p-grid1 h5{
+  font-size: 3.5rem;
+  font-family: 'Pacifico';
+}
+
+.p-grid1:hover{
+  background: linear-gradient(
+    rgba(75, 75, 75, 0.808),
+    rgba(36, 36, 36, 0.87)),center / cover url(https://images.unsplash.com/photo-1518528751534-7bed4f1dfb31?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ebcc7e71d19c1c0185a109464d5c836f&auto=format&fit=crop&w=1949&q=80);   
+}
+
+.p-grid1:hover p, .p-grid2:hover p,
+.p-grid3:hover p, .p-grid4:hover p,
+.p-grid5:hover p{
+  opacity: 100;
 }
 
 .p-grid2{
@@ -246,19 +320,59 @@ main .hero-text{
     rgba(36, 36, 36, 0.692)),center / cover url(  https://images.unsplash.com/photo-1498736297812-3a08021f206f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=218df997df6af8353f87d87cc4d55296&auto=format&fit=crop&w=1957&q=80);
 }
 
+.p-grid2 h5{
+  text-shadow: 2px 2px 2px black;
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+
+.p-grid2 span{
+  color: rgb(0, 153, 255);
+  text-shadow: 1px 1px 5px rgba(47, 47, 47, 0.15);
+  text-decoration: underline;
+}
+
 .p-grid2:hover{
-  grid-area: p-grid1 p-grid2;
+  background: linear-gradient(
+    rgba(75, 75, 75, 0.808),
+    rgba(36, 36, 36, 0.87)),center / cover url(  https://images.unsplash.com/photo-1498736297812-3a08021f206f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=218df997df6af8353f87d87cc4d55296&auto=format&fit=crop&w=1957&q=80);
 }
 
 .p-grid3{
   grid-area: p-grid3;
-  background-color: rgb(31, 31, 31);
+  background: linear-gradient(
+    rgba(75, 75, 75, 0.424),
+    rgba(36, 36, 36, 0.692)),center / cover url(img/nickirl.png);
+}
+
+.p-grid3:hover{
+  background: linear-gradient(
+    rgba(75, 75, 75, 0.808),
+    rgba(36, 36, 36, 0.87)),center / cover url(img/nickirl.png);
+}
+
+.p-grid3 h5{
+  font-size: 2.5rem;
+  font-weight: 200;
 }
 
 .p-grid4{
   grid-area: p-grid4;
   text-align: center;
-  background-color: rgb(31, 31, 31);
+  background: linear-gradient(
+    rgba(75, 75, 75, 0.424),
+    rgba(36, 36, 36, 0.692)),center / cover url(  https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=044e5d85cd16e79671287971a06be066&auto=format&fit=crop&w=1950&q=80);
+}
+
+.p-grid4 h5{
+  font-size: 3.5rem;
+  font-weight: 200;
+}
+
+.p-grid4:hover{
+  background: linear-gradient(
+    rgba(75, 75, 75, 0.808),
+    rgba(36, 36, 36, 0.87)),center / cover url(  https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=044e5d85cd16e79671287971a06be066&auto=format&fit=crop&w=1950&q=80);
 }
 
 .p-grid5{
@@ -292,7 +406,7 @@ main .hero-text{
 
 /* this is actually for the social links in the about section and needs to be renamed */
 .about{
-  margin-top:2rem;
+  margin-top:9rem;
 }
 
 .about-clickables li{
@@ -320,13 +434,14 @@ main .hero-text{
   letter-spacing: .1rem;
   font-weight: 200;
   display: block;
-  margin-top: 30rem;
+  margin-top: 20rem;
 }
 
 .descriptors h5{
   font-size: 2.5rem;
   text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.253);
   font-weight: 100;
+  padding-bottom: 3rem;
 }
 
 .descriptors span{
@@ -420,7 +535,6 @@ main .hero-text{
 /* contact sqaure  */
 
 .contact{
-  background-color: rgb(233, 233, 233);
   position: relative;
   text-align: center;
 }
@@ -439,6 +553,7 @@ main .hero-text{
   border: .5px solid black;
   padding: .5rem 2rem;
   margin: 10rem 0 3rem 0;
+  color: black;
 }
 
 .contact h5:hover{
@@ -458,6 +573,7 @@ main .hero-text{
   opacity: 0;
   transition: .6s;
 }
+
 .contact p{
   padding: 0 2rem;
   font-weight: 200;
