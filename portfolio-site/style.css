@@ -63,8 +63,8 @@ li{
 
 .hotdog div{
   position: relative;
-  width: 2.5rem;
-  height: 4px;
+  width: 2rem;
+  height: 2px;
   background-color: #e7e7e7;
   margin-top: 8px;
   transition: 0.3s;
@@ -83,7 +83,7 @@ li{
 
 #check:checked + .hotdog .weenie{
   transform: rotate(45deg);
-  margin-top: -4px;
+  margin-top: -2px;
 }
 
 #check:checked + .hotdog + nav{
@@ -166,7 +166,6 @@ main{
     rgba(75, 75, 75, 0.555),
     rgba(36, 36, 36, 0.472)),
     fixed url(https://images.unsplash.com/photo-1480506132288-68f7705954bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe27841e0f0f2922406eb0df58430433&auto=format&fit=crop&w=1993&q=80);
-    /* border-bottom: 10px solid rgb(31, 31, 31); */
     position: relative;
 }
 
@@ -310,8 +309,8 @@ main .hero-text{
   display: grid;
   grid-template-columns: 15rem 1fr;
   background: linear-gradient(
-    rgba(36, 36, 36, 0.096),
-    rgba(36, 36, 36, 0.808)),
+    rgba(36, 36, 36, 0.521),
+    rgba(10, 10, 10, 0.678)),
     url(img/me.png);
     background-size: cover;
 }
