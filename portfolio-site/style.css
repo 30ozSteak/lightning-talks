@@ -110,6 +110,38 @@ li {
   opacity: 100;
 }
 
+/* grid view */
+
+#grids{
+  display: none;
+}
+
+.grid-view{
+  cursor: pointer;
+  z-index: 5;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5rem;
+}
+
+.fa-grip-horizontal{
+  padding: .7rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  position: relative;
+}
+
+.fa-grip-horizontal:hover{
+  color: rgb(44, 44, 44);
+}
+
+#grids:checked + .grid-view ~ .portfolio-grid{
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+  "p-grid7 p-grid5 p-grid3 p-grid6"
+  "p-grid1 p-grid2 p-grid4 p-grid6";
+}
+
  /* tablet button */
 
  .tablet-view{
@@ -268,13 +300,14 @@ main{
 
 body {
   display: grid;
-  grid-template-rows: 100vh 0 0 1fr 100vh;
+  grid-template-rows: 100vh 0 0 0 1fr 100vh;
   grid-template-areas:
     "m-grid1"
     "m-grid2"
     "m-grid3"
     "m-grid4"
-    "m-grid5";
+    "m-grid5"
+    "m-grid6";
 }
 
 .hero-text{
@@ -293,7 +326,6 @@ body {
   font-weight: 600;
   text-transform: lowercase;  
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .hero-text :nth-child(3) {
@@ -319,7 +351,7 @@ body {
     "p-grid6 p-grid7";
   grid-gap: 1.5rem;
   justify-content: center;
-  padding: 5rem 5rem;
+  padding: 5rem;
   grid-area: m-grid4;
 }
 
@@ -517,7 +549,7 @@ body {
 .personal-grid {
   display: grid;
   grid-template-columns: 0.8fr 1fr 1fr;
-  grid-area: m-grid5;
+  grid-area: m-grid6;
 }
 
 .about-me {
@@ -774,7 +806,7 @@ body {
 
   body {
     display: grid;
-    grid-template-rows: 48rem 0 0 1fr 1fr;
+    grid-template-rows: 100vh 0 0 0 1fr 200vh;
   }
 }
 
@@ -798,12 +830,10 @@ body {
   }
 
   .descriptors {
-    margin-top: 2rem;
+    margin-top: 0;
   }
 
   .about-clickables{
-    margin-top: 2rem;
-    margin-left: 2rem;
     display: flex;
     flex-direction: row;
   }
